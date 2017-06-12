@@ -1,3 +1,5 @@
+/* need to use media queries to fit screen on mobile-first, desktop-second */
+
 html, body{
   overflow-x:hidden;
 }
@@ -28,6 +30,11 @@ p {
   font-weight: 100;  /* font-weight = 100 means light, e.g. Athiti Light */
 }
 
+
+
+
+
+
 /* GRID */
 .container {
   margin-right:auto;
@@ -55,3 +62,128 @@ p {
   min-height: 1px;
   margin: 0 2% 20px 2%;
 }
+
+
+/* classes for mobile go here */
+@media only screen and (max-width: 767px) {  /* start at 767 to avoid breakpoint conflict */
+  .container{
+    width:96%;
+  }
+
+
+/* first media if the browser is 768px */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* second media if the browser is 992px*/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  .one-half {
+    width: 46%;  /* 2% margin on the left and 2% on the right */
+  }
+  .one-third {
+    width: 29.33333%;
+  }
+  .one-fourth {
+    width: 21%;
+  }
+}
+
+/* third media if the browser is 1200px */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;  /* what the grid is based on */
+  }
+}
+
+
+
+/* HEADER */
+header {
+  background: rgba(96,189,189,0.10);
+  background-image: linear-gradient(206deg, #5f81a3 0%);
+}
+
+header nav {
+  padding: 1em 0;
+}
+
+header nav ul {
+  display: inling;
+  text-align: right;
+  float: right; /* sign in & sign up links will float to the right */
+  margin: 0;
+}
+
+header nav ul > li {
+  /* ul is the parent element, li is the child element */
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+/* sign up buttons */
+/* ul refers to sign in & sign up buttons, see html header section */
+header nav ul > li.btn-outline {
+  padding: 10px 15px;
+  border: 2px solid #606062; /* dark gray */
+  border-radius: 4px;
+}
+header nav ul > li.btn-outline:hover {
+  background-color:#FBEE95; /* button color changes to yellow when you hover */
+}
+header nav ul > li > a {
+  color: #606062; /* dark gray*/
+  text-decoration: none;
+}
+
+header nav ul > li.btn-outline:hover > a {
+  color: #606062 /* text changes to gray when you hover. This section is optional because the text color is gray through out */
+}
+
+/* Hero */
+header .hero {
+  text-align: center;
+  display:block;
+  position: relative;
+}
+
+header .hero h1 {
+  font-size: 48px;
+  font-weight: normal;
+  margin: 95px 0 0;
+}
+
+header .hero p{
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 100;
+  margin: 10px 0 40px; /* 10 on the top, 0 on the left and right, 40 on the bottom */
+}
+
+header .hero img {
+  display: block;
+  margin: 3cm auto 0;
+}
+
+
+
+/* Buttons */
+.btn {
+  border-radius: 4px;
+  color: #606062; /* dark gray is the text color */
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 30px;
+  background: #FBEE95;
+  border: 2px solid #FBEE95; /* border is also yellow */
+  box-shadow: 0px 2px 0px 0px #606062;
+}
+
+
+/* BENEFITS */
