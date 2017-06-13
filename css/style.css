@@ -32,9 +32,6 @@ p {
 
 
 
-
-
-
 /* GRID */
 .container {
   margin-right:auto;
@@ -64,12 +61,11 @@ p {
 }
 
 
-/* classes for mobile go here */
-@media only screen and (max-width: 767px) {  /* start at 767 to avoid breakpoint conflict */
+/*         classes for mobile go here
+@media (max-width: 767px) {
   .container{
     width:96%;
-  }
-
+  } */
 
 /* first media if the browser is 768px */
 @media (min-width: 768px) {
@@ -135,7 +131,7 @@ header nav ul > li.btn-outline {
   border-radius: 4px;
 }
 header nav ul > li.btn-outline:hover {
-  background-color:#FBEE95; /* button color changes to yellow when you hover */
+  background-image: linear-gradient(-180deg, #FBEE94 0%, #F4D75B 100%);  /* button color changes to yellow when you hover */
 }
 header nav ul > li > a {
   color: #606062; /* dark gray*/
@@ -145,6 +141,18 @@ header nav ul > li > a {
 header nav ul > li.btn-outline:hover > a {
   color: #606062 /* text changes to gray when you hover. This section is optional because the text color is gray through out */
 }
+
+/* Buttons */
+.btn {
+  color: #606062; /* dark gray is the text color */
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-image: linear-gradient(-180deg, #FBEE95 0%, #F5D85C 100%);
+  border-radius: 4px;
+}
+
+
 
 /* Hero */
 header .hero {
@@ -173,17 +181,166 @@ header .hero img {
 
 
 
-/* Buttons */
-.btn {
-  border-radius: 4px;
-  color: #606062; /* dark gray is the text color */
-  font-weight: 700;
-  text-decoration: none;
-  padding: 10px 30px;
-  background: #FBEE95;
-  border: 2px solid #FBEE95; /* border is also yellow */
-  box-shadow: 0px 2px 0px 0px #606062;
-}
+
 
 
 /* BENEFITS */
+.benefits {
+  text-align: center;
+  display: block;
+  position: relative;
+}
+
+.benefits ul {
+  margin: 0 auto;
+  padding: 4em 0;
+}
+.benefits ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.benefits i{
+  color: #606062;
+  font-size: 60px;
+  margin: 0;
+  vertical-align: middle;
+}
+.benefits h2{
+  color: #606062;
+}
+
+/* PRICING */
+.pricing {
+  background: #606062 url("http://www.kylejlarson.com/wp-content/uploads/2016/11/becoming-ux-wireframes.jpg") top center no-repeat
+  background-size: cover;
+  text-align: center;
+  padding: 4em 0;
+}
+.pricing h2, .pricing p {
+  color: #606062;
+}
+.pricing ul {
+  margin: 0 auto;
+  padding: 2em 0;
+}
+.pricing ul li {
+  list-style-type: none;   /* remove bullets */
+}
+.box {
+  padding: 0 15px 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.20);
+  min-height: 439px;
+  position: relative;;
+  margin-top: 25px;
+  border: 2px solid #60BDBD;
+}
+.box.middle {
+  min-height: 485px;
+  margin-top: 0px;
+  border: 2px solid #60BDBD;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.20);
+}
+.box h3 {
+  font-family: "Philosopher", Helvetica, Arial, sans-serif;  /* styling for CASUAL, PROFESSIONAL, EXPERT */
+  font-weight: 600;
+  color: #606062;
+  text-transform: uppercase;
+  background-image: linear-gradient(-180deg, #99E0E0 0%, #60BDBD 100%);
+  left: 0;
+  right: 0
+  top: 0;    /* left, right, and top are set to 0 to meet the edge of the rectangle */
+  text-align: center;
+  margin: -1px -15px 40px;   /* -15px to account for +15px padding in the box */
+  padding: 10px 0;
+}
+.box h4 {
+  font-size: 50px;
+  font-weight: normal;
+  margin: 40px 0 10px;
+  color: #6060602;
+  font-family: "Athiti", Helvetica, Arial, sans-serif;
+}
+
+.box h4 span {
+  font-size: 32px;
+  vertical-align: top;
+}
+.box h4 span.month {
+  font-family: "Athiti", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: #606062;
+  font-size: 20px;
+  vertical-align: middle;
+}
+.box ul li {   /* features e.g. up to 5 boxes, up to 10 collaborators */
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+.box .btn {    /* Put the "start your free trial" button 20px to the bottom, 20px to the left and right */
+  position: absolute;  /* Button is absolut to the browser. Box is relative to the browser, see line 233. */
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+/* Disclaimer */
+.small {
+  font-size: 12px;
+  color: #606062;
+  line-height: 15px;
+  font-style: italic;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 4em 0;
+  text-align: center;
+}
+.testimonials h2 {
+  color: #606062;
+}
+.testimonials ul li {
+  list-style-type: none;
+}
+.testimonials blockquote {
+  color: #606062;
+  text-align: left;
+  font-style: italic;
+  position: relative;
+  padding: 30px;
+  width: auto;
+  margin: 0;
+}
+.testimonials blockquote:after {
+  top: 100%;
+  left: 13%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-top-color: #yellow;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.testimonials img {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  float: left;
+  display: inline-block;
+  margin: 20px 10px 0 0;
+}
+.testimonials p.name {
+  float: left;
+  display: inline-block;
+  text-align: left;
+  font-size: 13px;
+  margin-top: 30px;
+}
+.rectangle.down-by-20px {
+  top: 20px;
+  position: absolute;
+}
