@@ -61,11 +61,12 @@ p {
 }
 
 
-/*         classes for mobile go here
+/*         classes for mobile go here */
 @media (max-width: 767px) {
   .container{
     width:96%;
-  } */
+  }
+}
 
 /* first media if the browser is 768px */
 @media (min-width: 768px) {
@@ -284,7 +285,7 @@ header .hero img {
   right: 20px;
 }
 
-/* Disclaimer */
+/********* Disclaimer ********/
 .small {
   font-size: 12px;
   color: #606062;
@@ -292,7 +293,7 @@ header .hero img {
   font-style: italic;
 }
 
-/* TESTIMONIALS */
+/**************** TESTIMONIALS ************/
 .testimonials {
   padding: 4em 0;
   text-align: center;
@@ -339,8 +340,16 @@ header .hero img {
   text-align: left;
   font-size: 13px;
   margin-top: 30px;
+  max-width: 120px;
 }
 .rectangle.down-by-20px {
-  top: 20px;
-  position: absolute;
+  margin-top: 20px;
+}
+
+
+/****** Call to Action ********/
+.call-to-action {
+  padding: 0 0 60px 0;
+  text-align: center;
+  margin-bottom: 20px;
 }
