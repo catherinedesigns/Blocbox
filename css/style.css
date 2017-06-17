@@ -61,45 +61,6 @@ p {
 }
 
 
-/*         classes for mobile go here */
-@media (max-width: 767px) {
-  .container{
-    width:96%;
-  }
-}
-
-/* first media if the browser is 768px */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-/* second media if the browser is 992px*/
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-  .one-half {
-    width: 46%;  /* 2% margin on the left and 2% on the right */
-  }
-  .one-third {
-    width: 29.33333%;
-  }
-  .one-fourth {
-    width: 21%;
-  }
-}
-
-/* third media if the browser is 1200px */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;  /* what the grid is based on */
-  }
-}
-
-
-
 /* HEADER */
 header {
   background: rgba(96,189,189,0.10);
@@ -312,6 +273,8 @@ header .hero img {
   padding: 30px;
   width: auto;
   margin: 0;
+  font-size: 1.5em;
+  font-weight: 100;
 }
 .testimonials blockquote:after {
   top: 100%;
@@ -338,7 +301,7 @@ header .hero img {
   float: left;
   display: inline-block;
   text-align: left;
-  font-size: 13px;
+  font-size: 1.2em;
   margin-top: 30px;
   max-width: 120px;
 }
@@ -349,7 +312,294 @@ header .hero img {
 
 /****** Call to Action ********/
 .call-to-action {
-  padding: 0 0 60px 0;
   text-align: center;
-  margin-bottom: 20px;
+  padding-bottom: 2em;
 }
+.call-to-action h2 {
+  padding: 0.5em 0;
+}
+.call-to-action p {
+  padding: 0.5em 0 1em;
+}
+
+
+
+/****** FOOTER *******/
+footer {
+  background-color: #E2E2E2;
+  color: #606062;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+footer p, footer nav ul {
+  font-size: 14px;
+  font-weight: 100;
+  text-align: center;
+  margin: 10px auto 0;
+}
+footer nav ul li {
+  list-style-type: none;  /* remove bullets */
+  display: inline;
+}
+footer nav ul li a {
+  color: #606062;
+  text-decoration: none;
+}
+footer .right-footer-block {
+  background-color: transparent;
+}
+footer .logo {
+  padding: 2.35em 0;
+  margin: 0 auto;
+  display: block;
+}
+
+
+
+/*    Styling for mobile first. Don't need media because css follows this rule first. If the mobile rule doesn't apply because the screen size is large, then css will follow the next rule. */
+  .container{
+    width:96%;
+  }
+  .hero h1{
+    font-size: 48px;
+  }
+  /* remove fadeIn effect for mobile */
+  .fadeIn {
+    animation-name: none;
+  }
+
+
+
+/* Styling for desktop */
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  /* write fadeIn effect again because 1) the fadeIn rule is overwritten for mobile 2) mobile comes first */
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  .one-half {
+    width: 46%;  /* 2% margin on the left and 2% on the right */
+  }
+  .one-third {
+    width: 29.33333%;
+  }
+  .one-fourth {
+    width: 21%;
+  }
+  footer {
+    height: 100px;
+  }
+  footer p, footer nav ul {
+    padding: 2em 0;
+    text-align: left;
+  }
+  footer .logo {
+    padding: 2em 0 2em 1.5em;
+  }
+}
+
+
+/* DASHBOARD */
+.dashboard {
+  background: #ffffff;
+}
+.left-nav {
+  height: 100vh; /* vh stands for vertical height */
+  width: 14.677777777%;
+  color: #FFFFFF; /* text color is white */
+  background-image: linear-gradient(49deg, #F4D75B 0%, #74B9BB 100%);
+  float: left;
+  position: fixed;
+  display: block;
+}
+.left-nav .site-logo {
+  padding: 20px 0;
+  background: #606062;
+  display: block;
+  text-align: center;
+}
+.left-nav .items {
+  padding: 0 6%;
+  }
+  .left-nav .items p {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #FFFFFF;
+    line-height: 15px;
+  }
+  .left-nav .items ul {
+    margin: 0 0 40px;
+    padding: 0;
+  }
+  .left-nav .items ul li {
+    list-style-type: none;
+    margin-bottom: 15px;
+  }
+  .left-nav .items ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 100;
+  }
+  .left-nav .items ul li a i {
+    width: 16px;
+    text-align: center;
+    margin-right: 8px;
+  }
+
+  /* LEFT NAVBAR SETTINGS */
+  .left-nav .settings {
+    position: absolute;
+    background: #606062;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+  }
+  .left-nav .settings img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: inline-block;
+  }
+  .left-nav .settings p {
+    display: inline-block;
+    vertical-align: 8px;
+    padding-top: 8px;
+    font-weight: 400;
+    margin: 0 0 0 10px;
+  }
+  .left-nav .settings a {
+    color:#606062;
+    text-decoration: none;
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+    margin-top: 8px
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 6em 1% 1.5em;
+    float: right;
+    width: 98%;
+    position: relative;
+  }
+  .content .header {
+    margin: 0 1% 20px;
+  }
+  .content .header h1 {
+    font-family: "Philosopher", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    margin: 0 0 30px;
+    font-size: 36px;
+    color: #606062;
+    line-height: 44px;
+    float: left;
+    display: inline-block;
+  }
+  .content .header > a {
+    float: right;
+  }
+  .content-item {
+    width: 96%;
+    margin: 0 2% 25px;
+    float: left;
+    display: block;
+  }
+  .item-box {
+    display: block;
+    height: 230px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.50);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  /* Large Mobile Devices */
+  @media (min-width: 460px) {
+    .content {
+      padding: 1.5em 1%;
+      float: right;
+      width: 90%;
+      position: relative;
+    }
+    .content-item {
+      width: 46%;
+      margin: 0 2% 25px;
+      float: left;
+      display: block;
+    }
+  }
+  /* Tablets */
+  @media (min-width: 768px) {
+    .content {
+      padding: 1.5em 5%;
+      float: right;
+      width: 90%;
+      position: relative;
+    }
+    .content > .container {
+      width: 700px;
+    }
+    .content-item {
+      width: 31.33333%;
+      margin: 0 1% 25px;
+    }
+  }
+  /* Laptops and Desktops */
+  @media (min-width: 992px) {
+    .content {
+      padding: 1.5em 1%;
+      float: right;
+      width: 83.33333%;
+      position: relative;
+    }
+    .content > .container {
+      width: auto;
+    }
+    .content-item {
+      width: 23%;
+      margin: 0 1% 25px;
+    }
+  }
+
+  .item-box > img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .item-box h2 {
+    font-family: "Athiti", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    margin: 0;
+  }
+  .item-box h2 a {
+    color: ##606062;
+    text-decoration: none;
+  }
+  .item-box h2 img {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 2px;
+    margin-right: 5px
+  }
+  .item-box p {
+    font-size: 14px;
+    color: ##606062;
+    line-height: 18px;
+    margin: 5px 0 0;
+  }
