@@ -358,51 +358,6 @@ footer .logo {
 
 
 
-/*    Styling for mobile first. Don't need media because css follows this rule first. If the mobile rule doesn't apply because the screen size is large, then css will follow the next rule. */
-  .container{
-    width:96%;
-  }
-  .hero h1{
-    font-size: 48px;
-  }
-  /* remove fadeIn effect for mobile */
-  .fadeIn {
-    animation-name: none;
-  }
-
-
-
-/* Styling for desktop */
-@media (min-width: 768px) {
-  .container {
-    width: 90%;
-  }
-  /* write fadeIn effect again because 1) the fadeIn rule is overwritten for mobile 2) mobile comes first */
-  .fadeIn {
-    animation-name: fadeIn;
-  }
-  .one-half {
-    width: 46%;  /* 2% margin on the left and 2% on the right */
-  }
-  .one-third {
-    width: 29.33333%;
-  }
-  .one-fourth {
-    width: 21%;
-  }
-  footer {
-    height: 100px;
-  }
-  footer p, footer nav ul {
-    padding: 2em 0;
-    text-align: left;
-  }
-  footer .logo {
-    padding: 2em 0 2em 1.5em;
-  }
-}
-
-
 /* DASHBOARD */
 .dashboard {
   background: #ffffff;
@@ -440,10 +395,18 @@ footer .logo {
     list-style-type: none;
     margin-bottom: 15px;
   }
+  .active {
+    background: #F4D75B;
+  }
+  .left-nav .items .active ul li a {
+    color: #606062;
+  }
   .left-nav .items ul li a {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 100;
+  }
+
   }
   .left-nav .items ul li a i {
     width: 16px;
@@ -476,7 +439,7 @@ footer .logo {
     margin: 0 0 0 10px;
   }
   .left-nav .settings a {
-    color:#606062;
+    color:#FFFFFF;
     text-decoration: none;
     text-align: right;
     float: right;
@@ -523,6 +486,52 @@ footer .logo {
     padding: 20px;
   }
 
+
+  /*********** Home Page *********/
+  /*  Styling for mobile first. Don't need media because css follows this rule first. If the mobile rule doesn't apply because the screen size is large, then css will follow the next rule.  */
+    .container{
+      width:96%;
+    }
+    .hero h1{
+      font-size: 48px;
+    }
+    /* remove fadeIn effect for mobile */
+    .fadeIn {
+      animation-name: none;
+    }
+
+  /* Styling for desktop */
+  @media (min-width: 768px) {
+    .container {
+      width: 90%;
+    }
+    /* write fadeIn effect again because 1) the fadeIn rule is overwritten for mobile 2) mobile comes first */
+    .fadeIn {
+      animation-name: fadeIn;
+    }
+    .one-half {
+      width: 46%;  /* 2% margin on the left and 2% on the right */
+    }
+    .one-third {
+      width: 29.33333%;
+    }
+    .one-fourth {
+      width: 21%;
+    }
+    footer {
+      height: 100px;
+    }
+    footer p, footer nav ul {
+      padding: 2em 0;
+      text-align: left;
+    }
+    footer .logo {
+      padding: 2em 0 2em 1.5em;
+    }
+  }
+
+
+  /********** Dashboard **********/
   /* Large Mobile Devices */
   @media (min-width: 460px) {
     .content {
@@ -587,7 +596,7 @@ footer .logo {
     margin: 0;
   }
   .item-box h2 a {
-    color: ##606062;
+    color: #606062;
     text-decoration: none;
   }
   .item-box h2 img {
