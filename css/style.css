@@ -1,4 +1,4 @@
-/* need to use media queries to fit screen on mobile-first, desktop-second */
+/* Mobile-first design */
 
 html, body{
   overflow-x:hidden;
@@ -53,11 +53,16 @@ p {
 }
 
 .one-half, .one-third, .one-fourth {
-  width: 96%; /* we will set the margin to be 2% on the left and on the right*/
   float: left; /* image will float to the left of the text */
   position: relative;
   min-height: 1px;
   margin: 0 2% 20px 2%;
+}
+.one-half {
+  width: 46%; /* we will set the margin to be 2% on the left and on the right*/
+}
+.one-third, .one-fourth {
+  width: 96%;
 }
 
 
@@ -76,6 +81,7 @@ header nav ul {
   text-align: right;
   float: right; /* sign in & sign up links will float to the right */
   margin: 0;
+  right: 2%;
 }
 
 header nav ul > li {
@@ -126,7 +132,6 @@ header .hero {
 header .hero h1 {
   font-size: 48px;
   font-weight: normal;
-  margin: 95px 0 0;
 }
 
 header .hero p{
@@ -138,11 +143,8 @@ header .hero p{
 
 header .hero img {
   display: block;
-  margin: 3cm auto 0;
+  margin: 5% auto 0;
 }
-
-
-
 
 
 
@@ -349,6 +351,7 @@ footer nav ul li a {
 }
 footer .right-footer-block {
   background-color: transparent;
+  margin-top: -5%;
 }
 footer .logo {
   padding: 2.35em 0;
@@ -362,15 +365,49 @@ footer .logo {
 .dashboard {
   background: #ffffff;
 }
+
+/* RESPONSIVE */
 .left-nav {
-  height: 100vh; /* vh stands for vertical height */
-  width: 14.677777777%;
-  color: #FFFFFF; /* text color is white */
-  background-image: linear-gradient(49deg, #F4D75B 0%, #74B9BB 100%);
-  float: left;
-  position: fixed;
-  display: block;
-}
+  /*height: 100vh;  vh stands for vertical height, removed for responsive design */
+  height: 100%;
+  width: 280px;
+  color: #ffffff;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   transform: translate(-280px,0);
+     -webkit-transform: translate(-280px,0); /** Chrome & Safari **/
+     -o-transform: translate(-280px,0); /** Opera **/
+     -moz-transform: translate(-280px,0); /** Firefox **/
+ }
+ .left-nav.open {
+   display:block;
+   width:280px;
+   background-image: linear-gradient(49deg, #F4D75B 0%, #74B9BB 100%);
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   transform: translate(0,0);
+     -webkit-transform: translate(0,0); /** Chrome & Safari **/
+     -o-transform: translate(0,0); /** Opera **/
+     -moz-transform: translate(0,0); /** Firefox **/
+     z-index: 100;
+ }
+ .hamburger {
+   position:absolute;
+   z-index: 1000;
+   background: #606062;
+   color:#FFF;
+   text-decoration: none;
+   font-size: 22px;
+   padding: 10px 15px;
+   border-radius: 4px;
+   left: 5px;
+   top: 15px;
+ }
 .left-nav .site-logo {
   padding: 20px 0;
   background: #606062;
@@ -394,7 +431,7 @@ footer .logo {
     margin-bottom: 15px;
   }
 
-  /** Hovsep solution **/
+  /** Hovsep .active solution **/
   .left-nav .items ul .active a {
     background: #F4D75B;
     color: #606062;
@@ -408,7 +445,7 @@ footer .logo {
     padding: 5px 0;
   }
    ul li a {
-    padding-left: 15%;
+    padding-left: 0%;
   }
   .items p {
     padding-left: 15%;
@@ -500,37 +537,30 @@ footer .logo {
   }
 
 
-  /*********** Home Page *********/
-  /*  Styling for mobile first. Don't need media because css follows this rule first. If the mobile rule doesn't apply because the screen size is large, then css will follow the next rule.  */
-    .container{
-      width:96%;
-    }
-    .hero h1{
-      font-size: 48px;
-    }
-    /* remove fadeIn effect for mobile */
-    .fadeIn {
-      animation-name: none;
-    }
-
-  /* Styling for desktop */
-  @media (min-width: 768px) {
-    .container {
-      width: 90%;
-    }
+  /* Tablet styling for home page */
+  @media (min-width: 750px) {
     /* write fadeIn effect again because 1) the fadeIn rule is overwritten for mobile 2) mobile comes first */
     .fadeIn {
       animation-name: fadeIn;
     }
-    .one-half {
-      width: 46%;  /* 2% margin on the left and 2% on the right */
-    }
     .one-third {
       width: 29.33333%;
     }
-    .one-fourth {
-      width: 21%;
-    }
+  .one-fourth {
+    width: 46%;
+  }
+  .left-footer-block {
+    width: 27%;
+  }
+  .middle-footer-block {
+    width: 35%;
+    padding-left: 2%;
+  }
+  footer .right-footer-block {
+    width: 24%;
+    margin-top: -1.5%;
+    right: -7%;
+  }
     footer {
       height: 100px;
     }
@@ -541,27 +571,7 @@ footer .logo {
     footer .logo {
       padding: 2em 0 2em 1.5em;
     }
-  }
-
-
-  /********** Dashboard **********/
-  /* Large Mobile Devices */
-  @media (min-width: 460px) {
-    .content {
-      padding: 1.5em 1%;
-      float: right;
-      width: 90%;
-      position: relative;
-    }
-    .content-item {
-      width: 46%;
-      margin: 0 2% 25px;
-      float: left;
-      display: block;
-    }
-  }
-  /* Tablets */
-  @media (min-width: 768px) {
+    /* tablet styling for dashboard */
     .content {
       padding: 1.5em 5%;
       float: right;
@@ -576,8 +586,13 @@ footer .logo {
       margin: 0 1% 25px;
     }
   }
-  /* Laptops and Desktops */
-  @media (min-width: 992px) {
+
+  /* Laptops styling for home page */
+  @media (min-width: 1025px) {
+    .one-fourth {
+      width: 21%;
+    }
+    /* Laptop styling for dashboard */
     .content {
       padding: 1.5em 1%;
       float: right;
@@ -591,37 +606,59 @@ footer .logo {
       width: 23%;
       margin: 0 1% 25px;
     }
-  }
-
-  .item-box > img {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  .item-box h2 {
-    font-family: "Athiti", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 17px;
-    margin: 0;
-  }
-  .item-box h2 a {
-    color: #606062;
-    text-decoration: none;
-  }
-  .item-box h2 img {
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 2px;
-    margin-right: 5px
-  }
-  .item-box p {
-    font-size: 14px;
-    color: ##606062;
-    line-height: 18px;
-    margin: 5px 0 0;
+    .item-box > img {
+      position: absolute;
+      height: 100%;
+      width: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .item-box h2 {
+      font-family: "Athiti", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 17px;
+      margin: 0;
+    }
+    .item-box h2 a {
+      color: #606062;
+      text-decoration: none;
+    }
+    .item-box h2 img {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 2px;
+      margin-right: 5px
+    }
+    .item-box p {
+      font-size: 14px;
+      color: ##606062;
+      line-height: 18px;
+      margin: 5px 0 0;
+    }
+    .left-nav {
+      height: 100vh;
+      width:14.66666667%;
+      color:#FFFFFF;
+      background-image: linear-gradient(49deg, #F4D75B 0%, #74B9BB 100%); /* yellow and blue */
+      float:left;
+      position: fixed;
+      display:block;
+      transform: translate(0,0);
+      -webkit-transform: translate(0,0); /** Chrome & Safari **/
+      -o-transform: translate(0,0); /** Opera **/
+      -moz-transform: translate(0,0); /** Firefox **/
+    }
+    .left-nav.open {
+      width:14.66666667%;
+      transform: translate(0,0);
+      -webkit-transform: translate(0,0); /** Chrome & Safari **/
+      -o-transform: translate(0,0); /** Opera **/
+      -moz-transform: translate(0,0); /** Firefox **/
+    }
+    .hamburger {
+      display:none;
+    }
   }

@@ -1,0 +1,59 @@
+/* MEDIA QUERIES START HERE */
+  /*  Styling for mobile first. Don't need media because css follows this rule first. If the mobile rule doesn't apply because the screen size is large, then css will follow the next rule.  */
+    /* Mobile first means that we assume users are on a phone */
+    /* home page */
+    @media (min-width: 100px;) {
+    .container {
+        padding-top: 120px;
+      }
+    header nav {
+        padding: 0;
+      }
+    .hero h1 {
+      font-size: 48px;
+    }
+    /* remove fadeIn effect */
+    .fadeIn {
+      display: none;
+    }
+    .one-half {
+      width: 46%;
+    }
+    .benefits .container .one-fourth {
+      width: 96%;
+    }
+    .pricing .container .one-third {
+      width: 96%;
+    }
+    .testimonials .container .one-fourth {
+      width: 96%;
+    }
+    /* dashboard */
+    .content {
+      padding: 1.5em 1%;
+      float: right;
+      width: 90%;
+      position: relative;
+    }
+    .content-item {
+      width: 46%;
+      margin: 0 2% 25px;
+      float: left;
+      display: block;
+    }
+  }
+
+
+
+
+  /* Laptops and Desktops */
+  @media (min-width: 992px) {
+
+
+
+
+
+
+
+  
+ }

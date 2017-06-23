@@ -18,6 +18,7 @@
 
 }
 .dropit .dropit-trigger { position: relative; }
+
 .dropit .dropit-submenu {
     position: absolute;
     top: 50%;
@@ -28,9 +29,11 @@
     list-style: none;
 	  padding: 20px 10px;
 	  margin: 20px 0 0;
-}
+} 
+
+
 .menu-settings .dropit-submenu {
-  min-width: 180px;
+  min-width: 170px;
   top: -150px;
 }
 .dropit .dropit-open .dropit-submenu {
